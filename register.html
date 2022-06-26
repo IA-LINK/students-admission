@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Page{% endblock title %}
+
+{% block content %} 
+    <h2>BioData</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" > <a href="{%url 'result'%}">Save and Continue </a></button>
+        <br><br>        
+       <a href="{% url 'home' %}">Home</a>
+  
+    </form>
+{% endblock %}
+
+
+
+
+    
